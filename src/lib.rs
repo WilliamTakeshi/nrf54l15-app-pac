@@ -2138,7 +2138,7 @@ impl core::fmt::Debug for GlobalRegulatorsS {
 }
 #[doc = "Voltage regulators 1"]
 pub use self::global_regulators_ns as global_regulators_s;
-#[no_mangle]
+#[unsafe(no_mangle)]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
