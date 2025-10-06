@@ -10,8 +10,6 @@ pub enum Errorstatus {
     PrematureInptrEnd = 1,
     #[doc = "2: End of OUTPTR job list before data structure was read."]
     PrematureOutptrEnd = 2,
-    #[doc = "3: Deprecated enumerator - Encryption aborted due to higher priority peripheral requesting or using the AES module."]
-    EncryptionTooSlow = 3,
     #[doc = "3: Encryption aborted due to higher priority peripheral requesting or using the AES module."]
     Aborted = 3,
     #[doc = "4: Bus error during DMA access."]
@@ -37,7 +35,6 @@ impl ErrorstatusR {
             0 => Some(Errorstatus::NoError),
             1 => Some(Errorstatus::PrematureInptrEnd),
             2 => Some(Errorstatus::PrematureOutptrEnd),
-            3 => Some(Errorstatus::EncryptionTooSlow),
             3 => Some(Errorstatus::Aborted),
             4 => Some(Errorstatus::DmaError),
             _ => None,
@@ -57,11 +54,6 @@ impl ErrorstatusR {
     #[inline(always)]
     pub fn is_premature_outptr_end(&self) -> bool {
         *self == Errorstatus::PrematureOutptrEnd
-    }
-    #[doc = "Deprecated enumerator - Encryption aborted due to higher priority peripheral requesting or using the AES module."]
-    #[inline(always)]
-    pub fn is_encryption_too_slow(&self) -> bool {
-        *self == Errorstatus::EncryptionTooSlow
     }
     #[doc = "Encryption aborted due to higher priority peripheral requesting or using the AES module."]
     #[inline(always)]
