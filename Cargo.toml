@@ -1,8 +1,10 @@
 [package]
 name = "nrf54l15-app-pac"
+description = "Peripheral Access Crate for Nordic's nrf54l15-app microcontroller"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+critical-section = { version = "1.0", optional = true }
 cortex-m = "0.7.7"
 vcell = "0.1.3"
